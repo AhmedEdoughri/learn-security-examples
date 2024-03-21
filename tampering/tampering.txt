@@ -1,0 +1,18 @@
+Q1 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+In insecure.js, the vulnerability lies in the lack of input sanitization. 
+When user input is directly taken and stored in the session without proper sanitization, it opens up the possibility for various attacks, 
+including cross-site scripting (XSS) and SQL injection, depending on how the input is used.
+
+The secure.js script addresses this vulnerability by introducing a sanitization step for the user input through the escapeHTML function. 
+This function ensures that any special characters in the input are converted to their corresponding HTML entities, 
+preventing them from being executed as code in the browser or misinterpreted in other contexts. 
+This is crucial for preventing tampering attacks where an attacker might inject malicious code or scripts into the application.
+
+------------------------------------------------------------------
+
+Q2 Which CIA property does tampering violate?
+
+Tampering primarily violates the Integrity property of the CIA:
+The integrity of data is compromised as unauthorized modifications can occur through the injection of malicious code or data manipulation. 
+Tampering allows attackers to alter data or the behavior of an application in unauthorized ways, leading to potentially harmful consequences.
