@@ -1,1 +1,19 @@
-Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+Q1 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+The vulnerability in insucre.js relates to session handling and the security of cookie attributes. 
+In this script, the session cookie is set with httpOnly: false, which means that client-side scripts can access the session cookie. 
+This makes the attacker to steal the session id from the cookie and execture senstive operation.
+
+The secure.js script mitigates this vulnerability by setting httpOnly: true in the session cookie configuration, preventing client-side scripts from accessing the cookie. 
+It also sets sameSite: true, which adds an extra layer of security by ensuring that the cookie is only sent in requests originating from the same domain as the cookie. 
+This helps to prevent cross-site request forgery (CSRF) attacks.
+Additionally, the secure version uses a dynamic session secret (taken from the command line arguments) instead of a hardcoded one, improving the security of the session management. 
+By using a secret that is not hardcoded in the source code, it is less likely to be exposed or guessed by an attacker.
+
+------------------------------------------------------------------
+
+Q2 Which CIA properties do you think Spoofing violates?
+
+I think it violates 2 things which are:
+1: Authentication (part of Confidentiality): Spoofing compromises the system's ability to verify the identity of users or systems, leading to unauthorized access. By impersonating legitimate users, attackers can gain access to sensitive information or perform actions on behalf of the actual user.
+2: Integrity: Spoofing can lead to unauthorized changes or transactions because the attacker can gain the same level of access as the impersonated user. This means that the attacker could manipulate data or perform actions that compromise the integrity of the system or data.
