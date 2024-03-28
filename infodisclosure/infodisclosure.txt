@@ -1,3 +1,15 @@
-Briefly explain the vulnerability and why the secure version prevents the vulnerability.
-Which CIA property does tampering violate?
-What additional security mechanisms can you incorporate?
+1. Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+Information Disclosure vulnerability occurs when sensitive data, such as user credentials or personal information, is exposed to unauthorized users due to inadequate security controls. 
+In the insecure code, sensitive user information could be leaked if an attacker exploits the NoSQL injection vulnerability or if error messages are too verbose. 
+The secure version prevents this by sanitizing user input, reducing the risk of NoSQL injection, and by not disclosing sensitive information in error messages or responses, thus minimizing the risk of information leakage.
+
+2. Which CIA property does tampering violate?
+
+Information Disclosure affects the Confidentiality aspect of the CIA triad. Confidentiality ensures that information is accessible only to those authorized to have access. 
+When information disclosure occurs, it means that unauthorized individuals gain access to confidential data.
+
+3. What additional security mechanisms can you incorporate?
+
+We can hash the passwords with SHA256 which leads to make the data to not be available to the attackers.
+In other words, we could use encryption to protect sensitive data, making it unreadable to unauthorized users.

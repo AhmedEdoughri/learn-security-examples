@@ -1,2 +1,10 @@
-- Briefly explain the vulnerability and why the secure version prevents the vulnerability.
-- What additional security mechanisms can you incorporate to prevent such attacks?
+1. Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+A DoS vulnerability occurs when an attacker overwhelms a system with requests, causing it to become unresponsive to legitimate traffic. 
+Although the provided code examples don't directly illustrate a classic DoS attack vulnerability, inefficient handling of database queries and unhandled exceptions can contribute to system overload and potential DoS conditions. 
+In the secure version, using a try/catch block helps in properly handling exceptions that might occur during database operations, which can prevent the server from crashing on unexpected errors. 
+However, to specifically prevent DoS attacks, more robust measures are needed, such as rate limiting or request validation.
+
+2. What additional security mechanisms can you incorporate to prevent such attacks?
+
+one mechanism is to implement rate limiting on your server to control the number of requests a user can make in a certain timeframe, preventing overloading of the system.

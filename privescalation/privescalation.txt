@@ -1,0 +1,9 @@
+1. Briefly explain the vulnerability and why the secure version prevents the vulnerability ?
+
+In the insecure version, the application checks the role of the user from the request body itself, which can be easily manipulated by an attacker to impersonate an admin and gain unauthorized access. 
+The secure version mitigates this by using session management for authentication. 
+It checks the user's role based on the authenticated session, not just the data provided in the request, making it harder for attackers to escalate their privileges without valid authentication.
+
+2. What additional security mechanisms can you incorporate to prevent such attacks?
+
+one mechanism is to implement MFA to add an additional layer of security, making it more difficult for attackers to gain unauthorized access even if they have compromised user credentials.

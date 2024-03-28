@@ -1,2 +1,11 @@
-- Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
-- What additional security mechanisms can you incorporate to prevent such attacks?
+1. Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
+
+In the insecure version, there is no logging mechanism to record user actions, making it difficult to trace who performed what actions and when. 
+This lack of audit trails allows users or attackers to repudiate their activities. 
+The secure version addresses this by implementing logging, where each action, such as sending a message or accessing messages, is logged with a timestamp and the user's information. 
+This creates an audit trail that can be used to verify and trace user actions, thereby preventing repudiation
+
+2. What additional security mechanisms can you incorporate to prevent such attacks?
+
+one mechanism is to implement detailed audit trails that log all user actions, including successful and failed attempts to access resources, changes made, and the time of these actions.
+So, we conduct regular audits of the logs to detect unauthorized or suspicious activities and to ensure the integrity and accuracy of the logs.
